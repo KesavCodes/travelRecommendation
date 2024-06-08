@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time To Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="travel_recommendation.css" />
+  </head>
+  <body>
+    <section>
+      <aside id="socials">
+        <ul>
+          <li>
+            <a
+              ><img
+                src="./assests/fbLogo.png"
+                alt="fb logo"
+                height="50"
+                width="50"
+            /></a>
+          </li>
+          <li>
+            <a
+              ><img
+                src="./assests/instaLogo.png"
+                alt="insta logo"
+                height="50"
+                width="50"
+            /></a>
+          </li>
+          <li>
+            <a
+              ><img
+                src="./assests/xLogo.png"
+                alt="x logo"
+                height="50"
+                width="50"
+            /></a>
+          </li>
+        </ul>
+      </aside>
+    </section>
+    <section id="navbar">
+      <nav id="nav">
+        <ul class="nav-list">
+          <li id="logo">
+            <img
+              src="https://cdn.pixabay.com/photo/2013/07/13/13/20/plane-160861_640.png"
+              alt="logo"
+              height="60"
+              width="90"
+            />
+            <h1>TTT</h1>
+          </li>
+          <li>
+            <ul class="nav-link">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about-us.html">About us</a></li>
+              <li><a href="contact-us.html">Contact us</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="search">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Enter a destination or keyword"
+              />
+              <button type="button" id="submit-btn">Search</button>
+              <button type="button" id="clr-btn">Clear</button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <div id="contact-us">
+      <section class="contact">
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+          "
+        >
+          <div>
+            <h2 style="font-size: 60px; font-weight: bold">CONTACT US</h2>
+            <p style="font-size: 20px; margin-top: 2rem">Get in touch</p>
+          </div>
+          <div>
+            <form action="#" class="form">
+              <div style="display: flex; flex-direction: column; gap: 1rem">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 1rem">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 1rem">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  cols="50"
+                  placeholder="Enter your message"
+                >
+                </textarea>
+              </div>
+              <button type="submit">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="card-container"></div>
+    <script src="./travel_recommendation.js"></script>
+  </body>
+</html>

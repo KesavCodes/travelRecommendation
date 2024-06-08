@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time To Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="travel_recommendation.css" />
+  </head>
+  <body>
+    <section>
+      <aside id="socials">
+        <ul>
+          <li>
+            <a
+              ><img
+                src="./assests/fbLogo.png"
+                alt="fb logo"
+                height="50"
+                width="50"
+            /></a>
+          </li>
+          <li>
+            <a
+              ><img
+                src="./assests/instaLogo.png"
+                alt="insta logo"
+                height="50"
+                width="50"
+            /></a>
+          </li>
+          <li>
+            <a
+              ><img
+                src="./assests/xLogo.png"
+                alt="x logo"
+                height="50"
+                width="50"
+            /></a>
+          </li>
+        </ul>
+      </aside>
+    </section>
+    <section id="navbar">
+      <nav id="nav">
+        <ul class="nav-list">
+          <li id="logo">
+            <img
+              src="https://cdn.pixabay.com/photo/2013/07/13/13/20/plane-160861_640.png"
+              alt="logo"
+              height="60"
+              width="90"
+            />
+            <h1>TTT</h1>
+          </li>
+          <li>
+            <ul class="nav-link">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about-us.html">About us</a></li>
+              <li><a href="contact-us.html">Contact us</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="search">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Enter a destination or keyword"
+              />
+              <button type="button" id="submit-btn">Search</button>
+              <button type="button" id="clr-btn">Clear</button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <div id="about-us">
+      <section class="about">
+        <h1 id="intro">
+          ABOUT
+          <span id="title">TTT</span>
+        </h1>
+        <p id="about-text">
+          Founded in 1975, TTT began as a vision to make travel accessible to
+          all. Headquartered in India, we have grown to become a leading name in
+          the travel booking industry. Our mission is to simplify the travel
+          experience, making it more enjoyable and accessible for travelers
+          around the world. At TTT, we believe in the power of travel to open
+          minds and create connections. We are dedicated to providing our
+          customers with a seamless booking experience, offering a vast
+          selection of accommodations, flights, and unique travel experiences to
+          suit all preferences and budgets.
+        </p>
+        <div class="employee-list">
+          <div>
+            <h2
+              style="
+                font-size: 60px;
+                line-height: 4rem;
+                color: black;
+                font-weight: bold;
+              "
+            >
+              Our <br />Team
+            </h2>
+          </div>
+          <div
+            style="
+              border: 1px solid black;
+              border-radius: 5px;
+              padding: 1rem;
+              background-color: #383636;
+            "
+          >
+            <h3 style="font-size: 22px">John Doe</h3>
+            <p>John is responsible for ...</p>
+            <div class="role">CEO</div>
+          </div>
+          <div
+            style="
+              border: 1px solid black;
+              border-radius: 5px;
+              padding: 1rem;
+              background-color: #383636;
+            "
+          >
+            <h3 style="font-size: 22px">Celina Thomas</h3>
+            <p>Celina is responsible for ...</p>
+            <div class="role">Team Lead</div>
+          </div>
+          <div
+            style="
+              border: 1px solid black;
+              border-radius: 5px;
+              padding: 1rem;
+              background-color: #383636;
+            "
+          >
+            <h3 style="font-size: 22px">Mike Tysen</h3>
+            <p>Mike is responsible for ...</p>
+            <div class="role">Delivery Head</div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="card-container"></div>
+    <script src="./travel_recommendation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+let travel_recommendation_api = {
+  country: [
+    {
+      id: 1,
+      name: "Australia",
+      cities: [
+        {
+          name: "Sydney, Australia",
+          imageUrl:
+            "https://th.bing.com/th/id/R.7ee25ec8c5f09b44fdd3ea353f162669?rik=przWRmWHP5U3ng&riu=http%3a%2f%2f3.bp.blogspot.com%2f-gTbmedEousw%2fU7p-sKf2dnI%2fAAAAAAAAe5w%2fGNlOzbiM7BQ%2fs1600%2f18486-sydney-opera-house-1920x1080-world-wallpaper.jpg&ehk=ZyBO7tRyUoY%2bDG4igEWRcI%2bwJI2N934TI5a2Th%2bL%2fEQ%3d&risl=&pid=ImgRaw&r=0",
+          description:
+            "A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge.",
+        },
+        {
+          name: "Melbourne, Australia",
+          imageUrl:
+            "https://i1.wp.com/dymabroad.com/wp-content/uploads/2020/06/australia-3905135-scaled.jpg?fit=2560%2C1706&ssl=1",
+          description:
+            "A cultural hub famous for its art, food, and diverse neighborhoods.",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "Japan",
+      cities: [
+        {
+          name: "Tokyo, Japan",
+          imageUrl:
+            "https://singersroom.com/wp-content/uploads/2023/02/Songs-About-Cities-scaled.jpg",
+          description:
+            "A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture.",
+        },
+        {
+          name: "Kyoto, Japan",
+          imageUrl:
+            "https://d3e1m60ptf1oym.cloudfront.net/d7de27b3-c9fe-4f1b-a9f3-ca88750115f5/M28265-FR-01_uxga.jpg",
+          description:
+            "Known for its historic temples, gardens, and traditional tea houses.",
+        },
+      ],
+    },
+    {
+      id: 3,
+      name: "Brazil",
+      cities: [
+        {
+          name: "Rio de Janeiro, Brazil",
+          imageUrl:
+            "https://th.bing.com/th/id/R.8527224a2e17639b1b6037637ab9b655?rik=RhTRpjDcOSrmfw&riu=http%3a%2f%2f4.bp.blogspot.com%2f-tDCZYnQwahc%2fUuUBzzgph4I%2fAAAAAAAABUM%2fhi5TTVHdHoI%2fs1600%2frio-de-janeiro-wallpapercac.jpg&ehk=zZzwRMTtowTA2IRq2h48LZxTaymSLpltzxHZ2w1Atow%3d&risl=&pid=ImgRaw&r=0",
+          description:
+            "A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks.",
+        },
+        {
+          name: "São Paulo, Brazil",
+          imageUrl:
+            "https://lp-cms-production.imgix.net/2019-06/72768175.jpg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4",
+          description:
+            "The financial hub with diverse culture, arts, and a vibrant nightlife.",
+        },
+      ],
+    },
+  ],
+  temples: [
+    {
+      id: 1,
+      name: "Angkor Wat, Cambodia",
+      imageUrl:
+        "https://traveldigg.com/wp-content/uploads/2017/02/Angkor-Wat-Temple-Cambodia.jpg",
+      description:
+        "A UNESCO World Heritage site and the largest religious monument in the world.",
+    },
+    {
+      id: 2,
+      name: "Taj Mahal, India",
+      imageUrl:
+        "https://fthmb.tqn.com/jK9JxwxbaLfqsvsNAz8kFssaZzU=/4080x2380/filters:fill(auto,1)/taj-mahal-facts-587d58cd3df78c17b6301f80.jpg",
+      description:
+        "An iconic symbol of love and a masterpiece of Mughal architecture.",
+    },
+  ],
+  beaches: [
+    {
+      id: 1,
+      name: "Bora Bora, French Polynesia",
+      imageUrl:
+        "https://www.mostbeautifulspots.com/wp-content/uploads/2017/07/Bora-Bora-French-Polynesia.jpg",
+      description:
+        "An island known for its stunning turquoise waters and luxurious overwater bungalows.",
+    },
+    {
+      id: 2,
+      name: "Copacabana Beach, Brazil",
+      imageUrl:
+        "https://th.bing.com/th/id/OIP.5ixEQwWszKft0fvr6SLgkwHaEK?rs=1&pid=ImgDetMain",
+      description:
+        "A famous beach in Rio de Janeiro, Brazil, with a vibrant atmosphere and scenic views.",
+    },
+  ],
+};
+
+const loadDestinations = async () => {
+  return new Promise(function (resolve, reject) {
+    resolve(travel_recommendation_api);
+  });
+};
+
+const onSubmitHandler = async () => {
+  const input = document.getElementById("search").value;
+  if (input === "") return;
+  const destinations = await loadDestinations();
+  const destinationsTypes = Object.keys(destinations);
+  const searchType = destinationsTypes.filter((item) =>
+    item.toLowerCase().includes(input.toLowerCase())
+  );
+  let filteredDestinations = destinations[searchType];
+  if(searchType[0] === "country"){
+    filteredDestinations = filteredDestinations.flatMap(destination => destination.cities)
+  }
+  if (!filteredDestinations || !filteredDestinations.length) return;
+  const cardContainer = document.getElementById("card-container");
+  cardContainer.innerHTML = ''
+  filteredDestinations.forEach((destination) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+    <div class="card-image">
+      <img src="${destination.imageUrl}" alt="${destination.name}" />
+    </div>
+    <div class="card-content">
+      <h3>${destination.name}</h3>
+      <p>${destination.description}</p>
+    </div>
+    `;
+    cardContainer.appendChild(card);
+  });
+};
+
+const onClearHandler = () => {
+  const input = document.getElementById("search");
+  input.value = "";
+};
+
+function eventListeners() {
+  document
+    .getElementById("submit-btn")
+    .addEventListener("click", onSubmitHandler);
+  document.getElementById("clr-btn").addEventListener("click", onClearHandler);
+}
+
+// Wait until the document is ready
+document.addEventListener("DOMContentLoaded", function () {
+  eventListeners();
+});

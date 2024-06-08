@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time To Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="travel_recommendation.css" />
+  </head>
+  <body>
+    <section>
+      <aside id="socials">
+        <ul>
+          <li>
+            <a
+              ><img
+                src="./assests/fbLogo.png"
+                alt="fb logo"
+                height="50"
+                width="50"
+            /></a>
+          </li>
+          <li>
+            <a
+              ><img
+                src="./assests/instaLogo.png"
+                alt="insta logo"
+                height="50"
+                width="50"
+            /></a>
+          </li>
+          <li>
+            <a
+              ><img
+                src="./assests/xLogo.png"
+                alt="x logo"
+                height="50"
+                width="50"
+            /></a>
+          </li>
+        </ul>
+      </aside>
+    </section>
+    <section id="navbar">
+      <nav id="nav">
+        <ul class="nav-list">
+          <li id="logo">
+            <img
+              src="https://cdn.pixabay.com/photo/2013/07/13/13/20/plane-160861_640.png"
+              alt="logo"
+              height="60"
+              width="90"
+            />
+            <h1>TTT</h1>
+          </li>
+          <li>
+            <ul class="nav-link">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about-us.html">About us</a></li>
+              <li><a href="contact-us.html">Contact us</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="search">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Enter a destination or keyword"
+              />
+              <button type="button" id="submit-btn">Search</button>
+              <button type="button" id="clr-btn">Clear</button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <div id="home">
+      <section class="hero">
+        <h1 id="intro">
+          Embark on a Journey of Discovery with
+          <span id="title">TTT</span> Where Every Trip is an Unwritten Story
+        </h1>
+        <p id="body">
+          Welcome to TTT, where we believe that travel is not just about the
+          destinations you visit, but the stories you create along the way. Our
+          mission is to inspire you to explore the world, embrace new cultures,
+          and collect moments that will become the treasured chapters of your
+          life’s narrative.
+        </p>
+        <p id="slogan">“Discover More Than Just Places; Discover Yourself.”</p>
+        <button type="button">BOOK NOW</button>
+      </section>
+    </div>
+    <div id="card-container"></div>
+    <script src="./travel_recommendation.js"></script>
+  </body>
+</html>
